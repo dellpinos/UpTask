@@ -1,0 +1,14 @@
+
+# NPM - Node.Js
+node_modules
+# Composer
+/vendor/
+# Funcionalidades, ideas, etc.
+notas.md
+# Source
+src/
+# Desarrollo
+gulpfile.js
+# JSON
+package.json
+package-lock.json
