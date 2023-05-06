@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
+use Model\Usuario;
 
 class LoginController {
     public static function login(Router $router){
@@ -22,19 +23,35 @@ class LoginController {
         echo 'Desde Logout';
 
     }
+
+
+
     public static function crear(Router $router){
-        echo 'Desde Crear!!!';
+
+        $usuario = new Usuario;
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $usuario->sincronizar($_POST);
 
+            $alertas = $usuario->validarNuevaCuenta();
+
+            debuguear($alertas);
         }
+
+        $alertas = Usuario::getAlertas(); ///// <<<<<<< Revisar esto
 
         // Render a la vista
         $router->render('auth/crear', [
-            'titulo' => 'Crear cuenta'
+            'titulo' => 'Crear cuenta',
+            'usuario' => $usuario,
+            'alertas' => $alertas
         ]);
 
     }
+
+
+
+
     public static function olvide(Router $router){
         echo 'Desde Olvide!!!';
 
@@ -67,8 +84,11 @@ class LoginController {
         ]);
 
     }
-    public static function confirmar() {
+    public static function confirmar(Router $router) {
         echo 'Desde Confirmar';
 
+        $router->render('auth/confirmar', [
+            'titulo' => 'Confirma tu cuenta'
+        ]);
     }
 }
