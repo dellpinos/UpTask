@@ -31,7 +31,7 @@ class LoginController {
 
         // Render a la vista
         $router->render('auth/crear', [
-            'titulo' => 'Crear'
+            'titulo' => 'Crear cuenta'
         ]);
 
     }
@@ -41,6 +41,10 @@ class LoginController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         }
+        // Render a la vista
+        $router->render('auth/olvide', [
+            'titulo' => 'Recuperar cuenta'
+        ]);
 
     }
     public static function restablecer(Router $router){
@@ -49,10 +53,18 @@ class LoginController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         }
+        // Render a la vista
+        $router->render('auth/restablecer', [
+            'titulo' => 'Restablece tu password'
+        ]);
 
     }
-    public static function mensaje() {
+    public static function mensaje(Router $router) {
         echo 'Desde Mensaje';
+
+        $router->render('auth/mensaje', [
+            'titulo' => 'Cuenta creada'
+        ]);
 
     }
     public static function confirmar() {
