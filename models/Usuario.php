@@ -27,6 +27,21 @@ class Usuario extends ActiveRecord
         $this->token = $args['token'] ?? '';
     }
 
+    // Validar Login del usuario
+    public function validarLogin() {
+        if(!$this->email) {
+            self::$alertas['error'][] = 'El Email es obligatorio';
+        }
+        if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
+            self::$alertas['error'][] = 'Email no válido';
+        }
+        if (strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El password debe tener al menos 6 caracteres';
+        }
+
+        return self::$alertas;
+    }
+
     // Validación nueva cuenta
     public function validarNuevaCuenta()
     {
@@ -59,6 +74,23 @@ class Usuario extends ActiveRecord
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
 
     }
+    // Valida password
+    public function validarPassword(){
+        if (strlen($this->password) < 6) {
+            self::$alertas['error'][] = 'El password debe tener al menos 6 caracteres';
+        }
+        if ($this->password !== $this->password2) {
+            self::$alertas['error'][] = 'Los password no coinciden';
+        }
+        // Esta valicadión obliga a una contraseña mas segura
+        // $patron = '/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/'; // Debe contener un numero, una min, una may y una extensión de 8 caracteres
+        // $resultado = preg_match($patron, $this->password);
+        // if ($resultado) {
+        //     self::$alertas['error'][] = 'El password debe contener mayusculas, minusculas, letras y numeros';
+        // }
+
+        return self::$alertas;
+    }
 
     // Generar un token
     public function crearToken() {
@@ -67,7 +99,7 @@ class Usuario extends ActiveRecord
     // Valida un email
     public function validarEmail() {
         if(!$this->email) {
-            self::$alertas['error'][] = 'Debes completar el campo';
+            self::$alertas['error'][] = 'El Email es obligatorio';
         }
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
             self::$alertas['error'][] = 'Email no válido';

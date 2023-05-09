@@ -4,28 +4,33 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Usuario;
-use Classes\Email; // <<<<<<<<<<<< TODO: enviar mails de confirmación, ya esta la clase y el namespace
+use Classes\Email;
 
 class LoginController
 {
     public static function login(Router $router)
     {
-        echo 'Desde Login!!!';
-
+        $alertas = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $auth = new Usuario($_POST);
+            $alertas = $auth->validarLogin();
+
+            if(empty($alertas)){
+                // Verificar que el usuario existe
+                
+            }
         }
 
         // Render a la vista
         $router->render('auth/login', [
-            'titulo' => 'Iniciar Sesión'
+            'titulo' => 'Iniciar Sesión',
+            'alertas' => $alertas
         ]);
     }
     public static function logout()
     {
         echo 'Desde Logout';
     }
-
-
 
     public static function crear(Router $router)
     {
@@ -64,14 +69,13 @@ class LoginController
                     $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
 
                     $email->enviarConfirmacion();
+
                     if($resultado) {
                         header('Location: /mensaje');
                     }
                 }
             };
         }
-
-
         // Render a la vista
         $router->render('auth/crear', [
             'titulo' => 'Crear cuenta',
@@ -87,22 +91,84 @@ class LoginController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $usuario = new Usuario($_POST);
             $alertas = $usuario->validarEmail();
+
+            if(empty($alertas)){
+                // Buscar el usuario
+                $usuario = Usuario::where('email', $usuario->email);
+
+                if($usuario && $usuario->confirmado) {
+                    // Generar un nuevo Token
+                    $usuario->crearToken();
+                    $usuario->password2 = null;
+
+                    // Actualizar el Usuario
+                    $usuario->guardar();
+
+                    // Enviar Email
+                    $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email->enviarInstrucciones();
+
+                    // Imprimir Alerta
+                    Usuario::setAlerta('exito', 'Se ha enviado un email con las instrucciones');
+                } else {
+                    Usuario::setAlerta('error', 'El usuario no existe');
+                    
+                }
+               
+            }
         }
+        $alertas = Usuario::getAlertas();
         // Render a la vista
         $router->render('auth/olvide', [
             'titulo' => 'Recuperar cuenta',
             'alertas' => $alertas
         ]);
     }
+
     public static function restablecer(Router $router)
     {
-        echo 'Desde Reeeeestablecer!!!';
+ 
+        $token = s($_GET['token']);
+        $mostrar = true;
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(!$token) header('Location: /');
+
+        $usuario = Usuario::where('token', $token);
+
+        if(empty($usuario)) {
+            // No hay usuario
+            Usuario::setAlerta('error', 'Token invalido');
+            $mostrar = false;
+        } else {
+            // Usuario encontrado
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+                $usuario->sincronizar($_POST);
+
+                // Almacenar password nuevo
+
+                $usuario->validarPassword();
+
+                if(empty($alertas)) {
+
+                    $usuario->hashPassword();
+                    $usuario->password2 = null;
+                    $usuario->token = null;
+                    $resultado = $usuario->guardar();
+
+                    if($resultado) header('Location: /');
+                }
+
+            }
         }
+
+        $alertas = Usuario::getAlertas();
+
         // Render a la vista
         $router->render('auth/restablecer', [
-            'titulo' => 'Restablece tu password'
+            'titulo' => 'Restablece tu password',
+            'alertas' => $alertas,
+            'mostrar' => $mostrar
         ]);
     }
     public static function mensaje(Router $router)
@@ -126,7 +192,7 @@ class LoginController
             Usuario::setAlerta('error', 'Token no valido o Email inexistente');
         } else {
             // Confirmar usuario
-            $usuario->confirmado = 1;
+            $usuario->confirmado = '1';
             $usuario->password2 = null;
             $usuario->token = '';
             $usuario->guardar();
