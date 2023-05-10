@@ -17,10 +17,33 @@ class LoginController
 
             if(empty($alertas)){
                 // Verificar que el usuario existe
-                
+                $usuario = Usuario::where('email', $auth->email);
+                if(!$usuario || !$usuario->confirmado){
+                    Usuario::setAlerta('error', 'El usuario no existe');
+                } else {
+                    // El usuario esta registrado
+                    if(password_verify($auth->password, $usuario->password)){
+
+                        // Iniciar Sesión
+                        session_start();
+                        $_SESSION['id'] = $usuario->id;
+                        $_SESSION['nombre'] = $usuario->nombre;
+                        $_SESSION['email'] = $usuario->email;
+                        $_SESSION['login'] = true;
+
+                        // Redireccionar
+                        header('Location: /dashboard');
+
+                        debuguear('TODO: /dashboard');
+
+                    } else {
+                        Usuario::setAlerta('error', 'Password incorrecto');
+                    }
+                }
             }
         }
 
+        $alertas = Usuario::getAlertas();
         // Render a la vista
         $router->render('auth/login', [
             'titulo' => 'Iniciar Sesión',
@@ -29,7 +52,10 @@ class LoginController
     }
     public static function logout()
     {
-        echo 'Desde Logout';
+        session_start();
+        $_SESSION = [];
+        session_destroy();
+        header('Location: /');
     }
 
     public static function crear(Router $router)
