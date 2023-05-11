@@ -28,11 +28,45 @@ class DashboardController {
 
             // Validación
             $alertas = $proyecto->validarProyecto();
+
+            if(empty($alertas)) {
+                // Generar una URL única
+                $proyecto->url = md5(uniqid());
+
+                // Almacenar al creador del proyecto
+                $proyecto->propietarioId = $_SESSION['id'];
+
+                // Guardar Proyecto
+                $proyecto->guardar();
+
+                // Redireccionar
+                header('Location: /proyecto?id=' . $proyecto->url);
+
+            }
         }
 
         $router->render('dashboard/crear-proyecto', [
             'titulo' => 'Crear Proyecto',
             'alertas' => $alertas
+        ]);
+    }
+    public static function proyecto(Router $router) {
+
+        session_start();
+        isAuth();
+
+        $token = $_GET['id'];
+        if(!$token) header('Location: /dashboard');
+        // Verificar al creador del proyecto
+
+        $proyecto = Proyecto::where('url', $token);
+        if($proyecto->propietarioId != $_SESSION['id']) {
+            header('Location: /dashboard');
+        }
+
+
+        $router->render('dashboard/proyecto', [
+            'titulo' => $proyecto->proyecto
         ]);
     }
 
