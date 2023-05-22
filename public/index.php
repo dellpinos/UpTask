@@ -4,8 +4,9 @@ require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
 use Controllers\LoginController;
-use Controllers\DashboardController;
 use Controllers\TareaController;
+use Controllers\ProyectoController;
+use Controllers\DashboardController;
 
 $router = new Router();
 
@@ -43,8 +44,11 @@ $router->post('/api/tarea', [TareaController::class, 'crear']);
 $router->post('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
 $router->post('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
 
+// API para proyectos
+$router->get('/api/proyectos', [ProyectoController::class, 'index']);
+$router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']);
 
 
 
-// Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
+// Comprueba y valida las rutas, les asigna las funciones del Controlador
 $router->comprobarRutas();
