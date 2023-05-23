@@ -1,0 +1,1 @@
+!function(){const e=document.querySelector("#mobile-menu"),t=document.querySelector(".sidebar");e&&e.addEventListener("click",(function(){t.classList.toggle("mostrar")}))}();
