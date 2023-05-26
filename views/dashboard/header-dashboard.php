@@ -3,4 +3,4 @@
     <div class="principal">
         <?php include_once __DIR__ . '/../templates/barra.php'; ?>
         <div class="contenido">
-            <h2 class="nombre-pagina"><?php echo $titulo; ?></h2>
+            <h2 class="nombre-pagina" id="nombre-pagina"><?php echo $titulo; ?></h2>

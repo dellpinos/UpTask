@@ -15,6 +15,7 @@
 <?php
 $script = '
 <script src="build/js/proyectos.js"></script>
+<script src="build/js/app.js"></script>
 '; ?>
 
 
