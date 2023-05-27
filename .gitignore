@@ -12,3 +12,5 @@ gulpfile.js
 # JSON
 package.json
 package-lock.json
+# Variables de entorno
+.env
