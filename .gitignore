@@ -14,3 +14,7 @@ package.json
 package-lock.json
 # Variables de entorno
 .env
+# Base de datos original
+uptask2.sql
+# Credenciales Heroku
+InfoDBHeroku.md
