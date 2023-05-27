@@ -14,6 +14,10 @@
             <label for="passwordNuevo">Nuevo Password</label>
             <input type="password" name="password_nuevo" placeholder="Tu nuevo password">
         </div>
+        <div class="campo">
+            <label for="repetirPasswordNuevo">Repetir Nuevo Password</label>
+            <input type="password" name="password2" placeholder="Tu nuevo password">
+        </div>
 
         <input type="submit" value="Guardar cambios">
     </form>

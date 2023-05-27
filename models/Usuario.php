@@ -134,6 +134,9 @@ class Usuario extends ActiveRecord
         if(strlen($this->password_nuevo) < 6) {
             self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
         }
+        if ($this->password_nuevo !== $this->password2) {
+            self::$alertas['error'][] = 'Los password no coinciden';
+        }
 
         return self::$alertas;
     }
