@@ -199,8 +199,6 @@ class LoginController
     }
     public static function mensaje(Router $router)
     {
-        echo 'Desde Mensaje';
-
         $router->render('auth/mensaje', [
             'titulo' => 'Cuenta creada'
         ]);
