@@ -16,5 +16,6 @@ package-lock.json
 .env
 # Base de datos original
 uptask2.sql
+uptaskOriginal.sql
 # Credenciales Heroku
 InfoDBHeroku.md
