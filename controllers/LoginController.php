@@ -96,6 +96,7 @@ class LoginController
 
                     $email->enviarConfirmacion();
 
+
                     if($resultado) {
                         header('Location: /mensaje');
                     }

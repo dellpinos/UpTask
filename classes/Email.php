@@ -37,7 +37,7 @@ class Email
         $mail->SMTPAuth = true;
         $mail->Port = 587;
         $mail->Username = 'tasktrackproject@gmail.com';
-        $mail->Password = 'xsmtpsib-8bf29491974f9012e1189d524157cac86297e987df7d9c6b19bc7b433e8a55b7-PywgFsaKn2M5Jpv1';
+        $mail->Password = '1YPRHbwskTGrt6If';
 
         // Cabecera del email
         $mail->setFrom('tasktrackproject@gmail.com'); // Aqui iria el dominio del host que estaria pagando
@@ -58,7 +58,8 @@ class Email
 
 
         // Enviar el email
-        $mail->send();
+        $mail->send(); 
+        
     }
     public function enviarInstrucciones(){
         // Crear el objeto de email, configuracion de casilla
@@ -68,7 +69,7 @@ class Email
         $mail->SMTPAuth = true;
         $mail->Port = 587;
         $mail->Username = 'tasktrackproject@gmail.com';
-        $mail->Password = 'xsmtpsib-8bf29491974f9012e1189d524157cac86297e987df7d9c6b19bc7b433e8a55b7-PywgFsaKn2M5Jpv1';
+        $mail->Password = '1YPRHbwskTGrt6If';
 
         // Cabecera del email
         $mail->setFrom('tasktrackproject@gmail.com'); // Aqui iria el dominio del host que estaria pagando
