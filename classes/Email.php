@@ -39,7 +39,7 @@ class Email
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has creado tu cuenta en Uptask, solo debes confirmarla presionando en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='https://uptask2.herokuapp.com/confirmar?token=" . $this->token . "'>Confirmar cuenta </a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='http://127.0.0.1:3000/confirmar?token=" . $this->token . "'>Confirmar cuenta </a></p>";
         $contenido .= "<p>Si vos no solicitaste esta cuenta, ignora este mensaje</p>";
         $contenido .= "</html>";
 
@@ -70,7 +70,7 @@ class Email
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has solicitado restablecer la contraseña, solo debes confirmar presionando en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='https://uptask2.herokuapp.com/restablecer?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='http://127.0.0.1:3000/restablecer?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
         $contenido .= "<p>Si vos no solicitaste este cambio, ignora el mensaje</p>";
         $contenido .= "</html>";
 
