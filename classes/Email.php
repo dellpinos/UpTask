@@ -19,25 +19,15 @@ class Email
     }
     public function enviarConfirmacion()
     {
-        // Crear el objeto de email, configuracion de casilla
-        // $mail = new PHPMailer();
-        // $mail->isSMTP();
-        // $mail->Host = 'sandbox.smtp.mailtrap.io';
-        // $mail->SMTPAuth = true;
-        // $mail->Port = 2525;
-        // $mail->Username = 'd085369ca3249d';
-        // $mail->Password = '29907ebc88b5c6';
-
-        
 
         //Probando Brevo/Sendin blue
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp-relay.sendinblue.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 587;
-        $mail->Username = 'tasktrackproject@gmail.com';
-        $mail->Password = '1YPRHbwskTGrt6If';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         // Cabecera del email
         $mail->setFrom('tasktrackproject@gmail.com'); // Aqui iria el dominio del host que estaria pagando
@@ -50,7 +40,7 @@ class Email
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has creado tu cuenta en Uptask, solo debes confirmarla presionando en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='https://uptask2.herokuapp.com/confirmar?token=" . $this->token . "'>Confirmar cuenta </a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar cuenta </a></p>";
         $contenido .= "<p>Si vos no solicitaste esta cuenta, ignora este mensaje</p>";
         $contenido .= "</html>";
 
@@ -65,11 +55,11 @@ class Email
         // Crear el objeto de email, configuracion de casilla
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp-relay.sendinblue.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 587;
-        $mail->Username = 'tasktrackproject@gmail.com';
-        $mail->Password = '1YPRHbwskTGrt6If';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         // Cabecera del email
         $mail->setFrom('tasktrackproject@gmail.com'); // Aqui iria el dominio del host que estaria pagando
@@ -82,7 +72,7 @@ class Email
 
         $contenido = "<html>";
         $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has solicitado restablecer la contraseña, solo debes confirmar presionando en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='https://uptask2.herokuapp.com/restablecer?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
+        $contenido .= "<p>Presiona aqui: <a href='" . $_ENV['HOST'] . "/restablecer?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
         $contenido .= "<p>Si vos no solicitaste este cambio, ignora el mensaje</p>";
         $contenido .= "</html>";
 
