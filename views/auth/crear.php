@@ -1,19 +1,23 @@
 <div class="contenedor crear">
-    
-<?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
 
-    
+    <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
+
+
 
 
 
     <div class="contenedor-sm">
-        <p class="descripcion-pagina">Crea tu cuenta en UpTask</p>
+        <p class="descripcion-pagina">Crea tu cuenta en TaskTrack</p>
 
-        <?php include_once __DIR__ .  '/../templates/alertas.php';?>
+        <?php include_once __DIR__ .  '/../templates/alertas.php'; ?>
         <form action="/crear" class="formulario" method="POST">
-        <div class="campo">
+            <div class="campo">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" value="<?php echo $usuario->nombre; ?>">
+            </div>
+            <div class="campo">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido" value="<?php echo $usuario->apellido; ?>">
             </div>
             <div class="campo">
                 <label for="email">Email</label>

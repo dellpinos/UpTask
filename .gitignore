@@ -4,10 +4,10 @@ node_modules
 # Composer
 /vendor/
 # Funcionalidades, ideas, etc.
-notas.md
-entornoDesarrollo.md
+Notas&Pendientes/
+NotaRapida.md
 # Source
-src/
+
 # Desarrollo
 gulpfile.js
 # JSON
@@ -15,8 +15,5 @@ package.json
 package-lock.json
 # Variables de entorno
 .env
-# Base de datos original
-uptask2.sql
-uptaskOriginal.sql
-# Credenciales Heroku
-InfoDBHeroku.md
+
+

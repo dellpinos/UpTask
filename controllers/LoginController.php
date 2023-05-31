@@ -28,6 +28,7 @@ class LoginController
                         session_start();
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre;
+                        $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
 
@@ -91,11 +92,12 @@ class LoginController
 
                     $resultado = $usuario->guardar();
 
+
                     // Enviar Email
-                    $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email = new Email($usuario->nombre, $usuario->apellido, $usuario->email, $usuario->token);
+
 
                     $email->enviarConfirmacion();
-
 
                     if($resultado) {
                         header('Location: /mensaje');
@@ -132,7 +134,7 @@ class LoginController
                     $usuario->guardar();
 
                     // Enviar Email
-                    $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
+                    $email = new Email($usuario->nombre, $usuario->apellido, $usuario->email, $usuario->token);
                     $email->enviarInstrucciones();
 
                     // Imprimir Alerta
@@ -230,6 +232,12 @@ class LoginController
         $router->render('auth/confirmar', [
             'titulo' => 'Confirma tu cuenta',
             'alertas' => $alertas
+        ]);
+    }
+    public static function noValida(Router $router)
+    {
+        $router->render('auth/rutaNoValida', [
+            'titulo' => '404'
         ]);
     }
 }

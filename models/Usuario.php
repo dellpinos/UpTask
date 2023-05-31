@@ -6,10 +6,11 @@ class Usuario extends ActiveRecord
 {
 
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'confirmado', 'token'];
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'password', 'confirmado', 'token'];
 
     public $id;
     public $nombre;
+    public $apellido;
     public $email;
     public $password;
     public $password2;
@@ -22,6 +23,7 @@ class Usuario extends ActiveRecord
     {
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
+        $this->apellido = $args['apellido'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->password2 = $args['password2'] ?? '';
@@ -52,6 +54,9 @@ class Usuario extends ActiveRecord
         if (!$this->nombre) {
             self::$alertas['error'][] = 'El nombre del usuario es obligatorio';
         }
+        if (!$this->apellido) {
+            self::$alertas['error'][] = 'El apellido del usuario es obligatorio';
+        }
         if (!$this->email) {
             self::$alertas['error'][] = 'El email es obligatorio';
         }
@@ -75,6 +80,9 @@ class Usuario extends ActiveRecord
     public function validar_perfil() {
         if (!$this->nombre) {
             self::$alertas['error'][] = 'El nombre del usuario es obligatorio';
+        }
+        if (!$this->apellido) {
+            self::$alertas['error'][] = 'El apellido del usuario es obligatorio';
         }
         if (!$this->email) {
             self::$alertas['error'][] = 'El email es obligatorio';

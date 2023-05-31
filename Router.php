@@ -39,7 +39,7 @@ class Router
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
-            echo "Ha ha ha... Ruta no válida, seguí participando";
+            header('Location: /404');
         }
     }
 

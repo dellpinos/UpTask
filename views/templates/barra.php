@@ -1,6 +1,6 @@
 <div class="barra-mobile">
     <a href="/dashboard">
-        <h1>UpTask</h1>
+        <h1>TaskTrack</h1>
     </a>
     
     <div class="menu">
@@ -11,7 +11,7 @@
 
 
 <div class="barra">
-    <p>Usuario: <span><?php echo $_SESSION['nombre'] ?></span></p>
+    <p>Usuario: <span><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido']; ?></span></p>
 
     <a href="/logout" class="cerrar-sesion">Cerrar Sesión</a>
 

@@ -1,0 +1,85 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contenedor-nueva-tarea {
+
+    display: flex;
+    justify-content: center;
+
+    .agregar-tarea {
+        margin-top: 2rem;
+        @include m.boton(v.$cyan, v.$blanco);
+    }
+}
+
+.listado-tareas {
+    list-style: none;
+    padding: 0;
+
+    .no-tareas {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+
+.tarea {
+
+    padding: .5rem 2rem;
+    border-bottom: 1.5px solid darken(v.$grisClaro, 5%);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    p {
+        font-size: 1.4rem;
+        cursor: pointer;
+        &:hover{
+            color: v.$indigo;
+        }
+        
+
+    }
+    .opciones {
+        display: flex;
+        gap: 1rem;
+
+        button {
+            border: none;
+            font-size: .9rem;
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .completa {
+            background-color: v.$azul;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$azul, 10%);
+            }
+        }
+        .pendiente {
+            background-color: v.$naranja;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$naranja, 10%);
+            }
+        }
+        .eliminar-tarea {
+            background-color: v.$rojo;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$rojo, 10%);
+            }
+        }
+    }
+}

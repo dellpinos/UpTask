@@ -8,12 +8,14 @@ class Email
 {
 
     public $nombre;
+    public $apellido;
     public $email;
     public $token;
 
-    public function __construct($nombre, $email, $token)
+    public function __construct($nombre, $apellido, $email, $token)
     {
         $this->nombre = $nombre;
+        $this->apellido = $apellido;
         $this->email = $email;
         $this->token = $token;
     }
@@ -39,7 +41,7 @@ class Email
         $mail->CharSet = "UTF-8";
 
         $contenido = "<html>";
-        $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has creado tu cuenta en Uptask, solo debes confirmarla presionando en el siguiente enlace</p>";
+        $contenido .= "<p>Hola <strong>" . $this->nombre . " " . $this->apellido . "</strong> Has creado tu cuenta en TaskTrack, solo debes confirmarla presionando en el siguiente enlace</p>";
         $contenido .= "<p>Presiona aqui: <a href='" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar cuenta </a></p>";
         $contenido .= "<p>Si vos no solicitaste esta cuenta, ignora este mensaje</p>";
         $contenido .= "</html>";
@@ -71,7 +73,7 @@ class Email
         $mail->CharSet = "UTF-8";
 
         $contenido = "<html>";
-        $contenido .= "<p>Hola <strong>" . $this->nombre . "</strong> Has solicitado restablecer la contraseña, solo debes confirmar presionando en el siguiente enlace</p>";
+        $contenido .= "<p>Hola <strong>" . $this->nombre . " " . $this->apellido . "</strong> Has solicitado restablecer la contraseña, solo debes confirmar presionando en el siguiente enlace</p>";
         $contenido .= "<p>Presiona aqui: <a href='" . $_ENV['HOST'] . "/restablecer?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
         $contenido .= "<p>Si vos no solicitaste este cambio, ignora el mensaje</p>";
         $contenido .= "</html>";

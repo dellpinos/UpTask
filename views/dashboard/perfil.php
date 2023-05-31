@@ -11,6 +11,10 @@
             <input type="text" value="<?php echo $usuario->nombre; ?>" name="nombre" placeholder="Tu nombre">
         </div>
         <div class="campo">
+            <label for="apellido">Apellido</label>
+            <input type="text" value="<?php echo $usuario->apellido; ?>" name="apellido" placeholder="Tu apellido">
+        </div>
+        <div class="campo">
             <label for="email">Email</label>
             <input type="email" value="<?php echo $usuario->email; ?>" name="email" placeholder="Tu email">
         </div>

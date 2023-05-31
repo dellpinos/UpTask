@@ -107,6 +107,7 @@ class DashboardController
                     Usuario::setAlerta('exito', 'Actualizado correctamente');
                     // Asignar nuevo nombre
                     $_SESSION['nombre'] = $usuario->nombre;
+                    $_SESSION['apellido'] = $usuario->apellido;
                 }
             }
             $alertas = $usuario->getAlertas();
