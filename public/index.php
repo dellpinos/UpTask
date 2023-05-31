@@ -10,6 +10,8 @@ use Controllers\DashboardController;
 
 $router = new Router();
 
+/* Zona Publica */
+
 // Login
 $router->get('/', [LoginController::class, 'login']);
 $router->post('/', [LoginController::class, 'login']);
@@ -33,6 +35,9 @@ $router->get('/confirmar', [LoginController::class, 'confirmar']);
 
 // Ruta no soportada
 $router->get('/404', [LoginController::class, 'noValida']);
+
+
+/* Zona Privada */
 
 // Zona de proyectos
 $router->get('/dashboard', [DashboardController::class, 'index']);
