@@ -13,8 +13,8 @@
         try {
             // console.log('Huola Front');
 
-            // const url = "http://127.0.0.1:3000/api/proyectos";
-            const url = "http://127.0.0.1:3000/api/proyectos";
+            // const url = "https://uptask2.herokuapp.com/api/proyectos";
+            const url = "https://uptask2.herokuapp.com/api/proyectos";
 
             const respuesta = await fetch(url);
 
