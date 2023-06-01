@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\HomeController;
 use Controllers\LoginController;
 use Controllers\TareaController;
 use Controllers\ProyectoController;
@@ -11,6 +12,9 @@ use Controllers\DashboardController;
 $router = new Router();
 
 /* Zona Publica */
+
+// Paginas Principales
+$router->get('/home', [HomeController::class, 'index']);
 
 // Login
 $router->get('/', [LoginController::class, 'login']);
