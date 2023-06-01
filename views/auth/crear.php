@@ -33,7 +33,7 @@
         </form>
 
         <div class="acciones">
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
             <a href="/olvide">Olvidaste tu password?</a>
         </div>
     </div> <!-- .contenedor-sm -->

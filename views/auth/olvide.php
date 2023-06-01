@@ -19,7 +19,7 @@
         </form>
 
         <div class="acciones">
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
             <a href="/crear">Todavia no tenes cuenta?</a>
         </div>
     </div> <!-- .contenedor-sm -->

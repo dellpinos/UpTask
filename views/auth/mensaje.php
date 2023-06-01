@@ -6,7 +6,7 @@
         <p class="descripcion-pagina">Hemos enviado las instrucciones para confirmar tu cuenta a tu email.</p>
 
         <div class="acciones">
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
         </div>
     </div> <!-- .contenedor-sm -->
 </div>

@@ -12,22 +12,34 @@
             <div class="home__derecha">
                 <!-- <img class="dark-mode-boton" src="/build/img/dark-mode.svg"> -->
                 <nav class="home__navegacion">
-                    <a href="/nosotros">Nosotros</a>
-                    <a href="/propiedades">Anuncios</a>
-                    <a href="/blog">Blog</a>
-                    <a href="/contacto">Contacto</a>
+                    
+                        <a href="/login">Login</a>
+                    
+                        <a href="/crear">Sign Up</a>
+                    
+                        <a href="/info-app">App</a>
+                    
+                        <a href="/blog">Blog</a>
+                    
+                        <a href="/contact">Contacto</a>
                 </nav>
             </div>
         </div> <!-- cierre de la barra-->
 
-        <div class="home__header <?php echo $inicio ? 'inicio' : ''; ?>">
-            <div class="home__contenedor home__contenido-header">
-            <?php echo $inicio ? '<h1>Organiza tus Proyectos</h1>' : ''; ?>    
-            <div class="home__contenedor__boton">
-                    <p class="home__boton">Crear Proyecto</p>
-                </div>
-                
+        <?php if ($inicio) {
+            echo '
+        <div class="home__header">
+            <div class="contenedor home__contenido-header">
+                <a href="/login" class="home__contenedor__boton">
+                    <p class="home__boton">Iniciar Sesión</p>
+                </a>
             </div>
         </div>
+        ';
+        } ?>
+
+
+
+
 
     </header>

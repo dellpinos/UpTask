@@ -24,7 +24,7 @@
 
         <div class="acciones">
             <a href="/crear">Todavía no tenes una cuenta?</a>
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
         </div>
 
         <?php endif; ?>

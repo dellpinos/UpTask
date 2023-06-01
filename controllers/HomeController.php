@@ -16,4 +16,13 @@ class HomeController {
             'inicio' => $inicio
         ]);
     }
+    public static function infoApp(Router $router){
+
+        $inicio = false;
+
+        $router->render('home/info-app', [
+            'titulo' => 'About Us',
+            'inicio' => $inicio
+        ]);
+    }
 }
