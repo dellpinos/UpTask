@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\HomeController;
 use Controllers\LoginController;
 use Controllers\TareaController;
 use Controllers\ProyectoController;
@@ -10,9 +11,15 @@ use Controllers\DashboardController;
 
 $router = new Router();
 
+/* Zona Publica */
+
+// Paginas Principales
+$router->get('/', [HomeController::class, 'index']);
+$router->get('/info-app', [HomeController::class, 'infoApp']);
+
 // Login
-$router->get('/', [LoginController::class, 'login']);
-$router->post('/', [LoginController::class, 'login']);
+$router->get('/login', [LoginController::class, 'login']);
+$router->post('/login', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
 // Crear cuenta
@@ -33,6 +40,9 @@ $router->get('/confirmar', [LoginController::class, 'confirmar']);
 
 // Ruta no soportada
 $router->get('/404', [LoginController::class, 'noValida']);
+
+
+/* Zona Privada */
 
 // Zona de proyectos
 $router->get('/dashboard', [DashboardController::class, 'index']);

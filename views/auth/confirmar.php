@@ -7,7 +7,7 @@
 
 
         <div class="acciones">
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
         </div>
     </div> <!-- .contenedor-sm -->
 </div>

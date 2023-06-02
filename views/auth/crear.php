@@ -3,9 +3,6 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
 
 
-
-
-
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Crea tu cuenta en TaskTrack</p>
 
@@ -36,7 +33,7 @@
         </form>
 
         <div class="acciones">
-            <a href="/">Iniciar Sesión</a>
+            <a href="/login">Iniciar Sesión</a>
             <a href="/olvide">Olvidaste tu password?</a>
         </div>
     </div> <!-- .contenedor-sm -->
