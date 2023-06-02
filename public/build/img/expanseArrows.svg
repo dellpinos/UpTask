@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" width="88" height="88" viewBox="0 0 24 24" stroke-width="1" stroke="#4338CA" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M16 4l4 0l0 4" />
-    <path d="M14 10l6 -6" />
-    <path d="M8 20l-4 0l0 -4" />
-    <path d="M4 20l6 -6" />
-    <path d="M16 20l4 0l0 -4" />
-    <path d="M14 14l6 6" />
-    <path d="M8 4l-4 0l0 4" />
-    <path d="M4 4l6 6" />
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" width="88" height="88" viewBox="0 0 24 24" stroke="#4338CA" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M16 4h4v4m-6 2l6-6M8 20H4v-4m0 4l6-6m6 6h4v-4m-6-2l6 6M8 4H4v4m0-4l6 6"/></svg>
