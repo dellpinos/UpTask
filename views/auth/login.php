@@ -2,7 +2,7 @@
 
 <div class="contenedor auth__contenedor">
     <!-- Aca va el include con la imagen y el texto a la izquierda -->
-    <div class="auth__imagen">
+    <div class="auth__imagen--login">
         <h2>Proyecta tus ideas</h2>
     </div>
 
@@ -27,7 +27,6 @@
                 <div class="auth__formulario-boton">
                     <input type="submit" class="boton" value="Iniciar Sesión">
                 </div>
-
             </form>
 
             <div class="acciones">
@@ -35,9 +34,7 @@
                 <a href="/olvide">Olvidaste tu password?</a>
             </div>
         </div> <!-- .contenedor-sm -->
-
     </div>
-
 </div>
 
 
