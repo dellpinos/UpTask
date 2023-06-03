@@ -48,7 +48,8 @@ class LoginController
         // Render a la vista
         $router->render('auth/login', [
             'titulo' => 'Iniciar Sesión',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'inicio' => false
         ]);
     }
     public static function logout()
@@ -109,7 +110,8 @@ class LoginController
         $router->render('auth/crear', [
             'titulo' => 'Crear cuenta',
             'usuario' => $usuario,
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'inicio' => false
         ]);
     }
 
@@ -150,7 +152,8 @@ class LoginController
         // Render a la vista
         $router->render('auth/olvide', [
             'titulo' => 'Recuperar cuenta',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'inicio' => false
         ]);
     }
 
@@ -197,13 +200,15 @@ class LoginController
         $router->render('auth/restablecer', [
             'titulo' => 'Restablece tu password',
             'alertas' => $alertas,
-            'mostrar' => $mostrar
+            'mostrar' => $mostrar,
+            'inicio' => false
         ]);
     }
     public static function mensaje(Router $router)
     {
         $router->render('auth/mensaje', [
-            'titulo' => 'Cuenta creada'
+            'titulo' => 'Cuenta creada',
+            'inicio' => false
         ]);
     }
     public static function confirmar(Router $router)
@@ -231,13 +236,15 @@ class LoginController
 
         $router->render('auth/confirmar', [
             'titulo' => 'Confirma tu cuenta',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'inicio' => false
         ]);
     }
     public static function noValida(Router $router)
     {
         $router->render('auth/rutaNoValida', [
-            'titulo' => '404'
+            'titulo' => '404',
+            'inicio' => false
         ]);
     }
 }
