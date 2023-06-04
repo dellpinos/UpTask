@@ -5,6 +5,7 @@
     
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Hemos enviado las instrucciones para confirmar tu cuenta a tu email.</p>
+        <p class="descripcion-pagina">- No olvides revisar el correo no deseado -</p>
         
         <div class="acciones">
             <a href="/login">Iniciar Sesión</a>
