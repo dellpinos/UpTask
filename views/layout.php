@@ -7,6 +7,11 @@
     <title>TaskTrack | <?php echo $titulo ?? ''; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="build/css/app.css" as="style">
+
+
+    <link rel="preload" href="build/img/notasMujer.jpg" as="image">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Open+Sans&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="build/css/app.css">
 </head>
