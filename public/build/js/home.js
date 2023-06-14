@@ -1,0 +1,1 @@
+!function(){console.log("Ea!");document.querySelector(".home__mobile-menu").addEventListener("click",(function(){console.log("Menu Aqui")}))}();
