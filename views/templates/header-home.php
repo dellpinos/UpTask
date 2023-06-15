@@ -1,21 +1,24 @@
 <body>
     <header>
         <div class="home__barra">
-            <a href="/">
-                <h1>TaskTrack</h1>
-            </a>
-            <div class="home__mobile-menu">
-                <img src="/build/img/burger.svg" alt="icono menu responsive">
+            <div class="home__barra-contenedor">
+                <a href="/">
+                    <h1>TaskTrack</h1>
+                </a>
+                <div class="home__mobile-menu home__mobile-menu--ocultar">
+                    <img src="/build/img/burger.svg" alt="icono menu">
+                </div>
             </div>
 
-            <div class="home__derecha">
+
+            <div class="home__derecha"> <!-- la clase home__derecha--mobile se añade con Js-->
                 <!-- dark-mode-boton -->
-                <nav class="home__navegacion">
-                        <a href="/login">Login</a>
-                        <a href="/crear">Sign Up</a>
-                        <a href="/info-app">App</a>
-                        <a href="/blog">Blog</a>
-                        <a href="/contact">Contacto</a>
+                <nav class="home__navegacion"> <!-- la clase home__derecha--mobile se añade con Js-->
+                    <a href="/login">Login</a>
+                    <a href="/crear">Sign Up</a>
+                    <a href="/info-app">App</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contacto</a>
                 </nav>
             </div>
         </div> <!-- cierre de la barra-->
@@ -31,9 +34,6 @@
         </div>
         ';
         } ?>
-
-
-
 
 
     </header>
