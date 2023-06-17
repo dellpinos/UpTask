@@ -47,7 +47,7 @@ class LoginController
         $alertas = Usuario::getAlertas();
         // Render a la vista
         $router->render('auth/login', [
-            'titulo' => 'Iniciar Sesión',
+            'titulo' => 'Login',
             'alertas' => $alertas,
             'inicio' => false
         ]);

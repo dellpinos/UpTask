@@ -1,6 +1,6 @@
 <aside class="sidebar">
     <div class="contenedor-sidebar">
-        <a href="/">
+        <a href="/dashboard">
             <h2>TaskTrack</h2>
         </a>
         <div class="cerrar-menu">
@@ -13,6 +13,7 @@
         <a class="<?php echo ($titulo === 'Proyectos') ? 'activo' : ''; ?>" href="/dashboard">Proyectos</a>
         <a class="<?php echo ($titulo === 'Crear Proyecto') ? 'activo' : ''; ?>" href="/crear-proyecto">Crear Proyectos</a>
         <a class="<?php echo ($titulo === 'Tu Perfil') ? 'activo' : ''; ?>" href="/perfil">Perfil</a>
+
     </nav>
 
     <div class="cerrar-sesion-mobile">

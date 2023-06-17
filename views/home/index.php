@@ -47,48 +47,8 @@
             </p>
         </div>
     </div>
-
-    <div class="home__contenedor-cards">
-        <div class="home__card">
-            <div class="home__card-imagen">
-            </div>
-            <div class="home__card-texto">
-                <h4>Dale forma a tus ideas</h4>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui animi quibusdam sit sunt ab at! 
-                </p>
-            </div>
-        </div> <!-- fin card -->
-        <div class="home__card">
-            <div class="home__card-imagen">
-            </div>
-            <div class="home__card-texto">
-                <h4>Dale forma a tus ideas</h4>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui animi quibusdam sit sunt ab at! 
-                </p>
-            </div>
-        </div> <!-- fin card -->
-        <div class="home__card">
-            <div class="home__card-imagen">
-            </div>
-            <div class="home__card-texto">
-                <h4>Dale forma a tus ideas</h4>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui animi quibusdam sit sunt ab at! 
-                </p>
-            </div>
-        </div> <!-- fin card -->
-        <div class="home__card">
-            <div class="home__card-imagen">
-            </div>
-            <div class="home__card-texto">
-                <h4>Dale forma a tus ideas</h4>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui animi quibusdam sit sunt ab at! 
-                </p>
-            </div>
-        </div> <!-- fin card -->
+    
+    <?php include_once __DIR__ . '/../templates/cards-home.php'; ?>
 
     </div>
     <div class="home__contenedor-proyectos">
