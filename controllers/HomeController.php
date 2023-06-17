@@ -18,6 +18,7 @@ class HomeController {
     }
     public static function infoApp(Router $router){
 
+
         $inicio = false;
 
         $router->render('home/info-app', [

@@ -13,6 +13,7 @@ class DashboardController
     {
 
         session_start();
+        
         isAuth();
 
         $id = $_SESSION['id'];
