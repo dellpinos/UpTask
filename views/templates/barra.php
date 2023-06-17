@@ -4,7 +4,7 @@
     </a>
     
     <div class="menu">
-        <img id="mobile-menu" src="build/img/menu.svg" alt="Imagen menu">
+        <img id="mobile-menu" src="build/img/burger.svg" alt="Imagen menu">
     </div>
 </div>
 

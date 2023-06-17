@@ -1,0 +1,1 @@
+document.querySelector(".home__mobile-menu").addEventListener("click",(function(){const e=document.querySelector("body"),o=document.querySelector(".home__barra"),c=document.querySelector(".home__derecha");e.classList.toggle("scroll-mobile"),o.classList.toggle("home__barra--mobile"),c.classList.toggle("home__derecha--mobile")}));
