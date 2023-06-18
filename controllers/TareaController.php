@@ -18,6 +18,8 @@ class TareaController {
         if(!$proyecto || $proyecto->propietarioId !== $_SESSION['id']) header('Location: /404');
         $tareas = Tarea::belongsTo('proyectoId', $proyecto->id);
 
+
+        requiereCors();
         echo json_encode(['tareas' => $tareas]);
     }
 
@@ -33,6 +35,7 @@ class TareaController {
                     'tipo' => 'error',
                     'mensaje' => 'Hubo un error al agregar la tarea'
                 ];
+                requiereCors();
                 echo json_encode($respuesta);
                 return;
             }
@@ -50,6 +53,7 @@ class TareaController {
                     'id' => $resultado['id'],
                     'proyectoId' => $proyecto->id
                 ];
+                requiereCors();
                 echo json_encode($respuesta);
             } else {
                 $respuesta = [
@@ -73,6 +77,7 @@ class TareaController {
                     'tipo' => 'error',
                     'mensaje' => 'Hubo un error al actualizar la tarea'
                 ];
+                requiereCors();
                 echo json_encode($respuesta);
                 return;
             }
@@ -87,6 +92,7 @@ class TareaController {
                     'proyectoId' => $proyecto->id,
                     'mensaje' => "Actualizado correctamente!"
                 ];
+                requiereCors();
                 echo json_encode(['respuesta' => $respuesta]);
             }
         }
@@ -104,6 +110,7 @@ class TareaController {
                     'tipo' => 'error',
                     'mensaje' => 'Hubo un error al actualizar la tarea'
                 ];
+                requiereCors();
                 echo json_encode($respuesta);
                 return;
             }
@@ -125,6 +132,7 @@ class TareaController {
                 ];
             }
             
+            requiereCors();
             echo json_encode($resultado);
 
             

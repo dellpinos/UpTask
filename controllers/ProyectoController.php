@@ -38,7 +38,7 @@ class ProyectoController
         //     $tareas[] = Tarea::belongsTo('proyectoId', $proyecto->id);
         // }
 
-
+        requiereCors();
         echo json_encode([
             'proyectos' => $proyectos,
             'tareas' => $tareas
