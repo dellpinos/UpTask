@@ -30,7 +30,7 @@
 
 <?php
 $script .= '
-<script src="build/js/tareas.js"></script>
+<script src="build/js/tareas_1.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 ';
 
