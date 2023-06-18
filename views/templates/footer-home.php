@@ -15,6 +15,6 @@
 <?php
 $script = '';
 $script .= '
-<script src="build/js/home.js"></script>
+<script src="build/js/home_1.1.js"></script>
 '; ?>
 </body>
