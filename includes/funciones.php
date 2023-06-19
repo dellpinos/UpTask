@@ -23,18 +23,24 @@ function isAuth(): void
     }
 }
 
+// Evitar conflicto CORS de recursos de origen cruzado
+// Este codigo es parte de otras soluciones implementadas para que
+// la aplicacion funcione en Android, tenia este conflicto bloqueando al fetch() de Js
+// e impidiendo la ejecucion.
+// Puede no ser necesaria pero se encuentra en Prod y funciona correctamente el codigo
 function requiereCors()
 {
+    
     // Obtener el origen de la solicitud
-    $origin = $_SERVER['HTTP_HOST'];
+    $origen = $_SERVER['HTTP_HOST'];
 
     // Definir el origen permitido
-    $allowedOrigin = $_ENV['HOST'];
+    $origenPermitido = $_ENV['HOST'];
 
     // Verificar si se requiere el encabezado 'Access-Control-Allow-Origin'
-    $seRequiereCors = $origin !== $allowedOrigin;
+    $seRequiereCors = $origen !== $origenPermitido;
 
     if ($seRequiereCors) {
-        header('Access-Control-Allow-Origin:  ' . $_ENV['HOST']);
+        header('Access-Control-Allow-Origin: ' . $_ENV['HOST']);
     }
 }
