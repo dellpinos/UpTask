@@ -1,4 +1,6 @@
-<?php include_once __DIR__ . '/header-dashboard.php'; ?>
+<div class="principal">
+                <div class="contenido">
+                    <h2 class="nombre-pagina" id="nombre-pagina"><?php echo $titulo; ?></h2>
 
     <div class="contenedor-sm">
         <div class="contenedor-nueva-tarea">
@@ -26,11 +28,11 @@
         <ul class="listado-tareas" id="listado-tareas"></ul>
     </div>
 
-<?php include_once __DIR__ . '/footer-dashboard.php'; ?>
+
 
 <?php
-$script .= '
-<script src="build/js/tareas_1.1.js"></script>
+$script = '
+<script src="/build/js/tareas_1.1.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 ';
 

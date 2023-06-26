@@ -1,11 +1,13 @@
-<?php include_once __DIR__ . '/header-dashboard.php'; ?>
+<div class="principal">
+                <div class="contenido">
+                    <h2 class="nombre-pagina" id="nombre-pagina"><?php echo $titulo; ?></h2>
 
 <div class="contenedor-sm">
     <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
-    <a href="/cambiar-password" class="enlace">Cambiar password</a>
+    <a href="/tasktrack/cambiar-password" class="enlace">Cambiar password</a>
 
-    <form class="formulario" method="POST" action="/perfil">
+    <form class="formulario" method="POST" action="/tasktrack/perfil">
         <div class="campo">
             <label for="nombre_perfil">Nombre</label>
             <input type="text" id="nombre_perfil" value="<?php echo $usuario->nombre; ?>" name="nombre" placeholder="Tu nombre">
@@ -23,5 +25,3 @@
     </form>
 </div>
 
-
-<?php include_once __DIR__ . '/footer-dashboard.php'; ?>

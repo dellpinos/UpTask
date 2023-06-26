@@ -1,4 +1,6 @@
-<?php include_once __DIR__ . '/header-dashboard.php'; ?>
+<div class="principal">
+                <div class="contenido">
+                    <h2 class="nombre-pagina" id="nombre-pagina"><?php echo $titulo; ?></h2>
 
 
 
@@ -10,12 +12,7 @@
 
 
 
-
-<?php include_once __DIR__ . '/footer-dashboard.php'; ?>
-
-
 <?php
 $script = '
-<script src="build/js/proyectos_1.1.js"></script>
-<script src="build/js/app_1.1.js"></script>
+<script src="/build/js/proyectos_1.1.js" defer></script>
 '; ?>

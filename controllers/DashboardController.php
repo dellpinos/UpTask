@@ -49,7 +49,7 @@ class DashboardController
                 $proyecto->guardar();
 
                 // Redireccionar
-                header('Location: /proyecto?id=' . $proyecto->url);
+                header('Location: /tasktrack/proyecto?id=' . $proyecto->url);
             }
         }
 
@@ -64,13 +64,13 @@ class DashboardController
         session_start();
         isAuth();
 
-        $token = $_GET['id'];
-        if (!$token) header('Location: /dashboard');
+        $token = $_GET['id']; 
+        if (!$token) header('Location: /tasktrack/dashboard');
         // Verificar al creador del proyecto
 
         $proyecto = Proyecto::where('url', $token);
         if ($proyecto->propietarioId != $_SESSION['id']) {
-            header('Location: /dashboard');
+            header('Location: /tasktrack/dashboard');
         }
 
 
