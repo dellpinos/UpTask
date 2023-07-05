@@ -1,9 +1,5 @@
 <aside class="dashboard__sidebar">
 
-        <div class="dashboard__cerrar-mobile">
-            <img id="cerrar-menu" src="/build/img/cerrar.svg" alt="Imagen cerrar menu">
-        </div>
-
 
 
     <nav class="dashboard__sidebar-nav">
