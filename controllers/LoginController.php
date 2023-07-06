@@ -33,9 +33,7 @@ class LoginController
                         $_SESSION['login'] = true;
 
                         // Redireccionar
-                        header('Location: /dashboard');
-
-                        debuguear('TODO: /dashboard');
+                        header('Location: /tasktrack/dashboard');
 
                     } else {
                         Usuario::setAlerta('error', 'Password incorrecto');

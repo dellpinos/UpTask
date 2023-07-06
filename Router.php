@@ -20,8 +20,6 @@ class Router
     public function comprobarRutas()
     {
 
-        // $currentUrl = $_SERVER['PATH_INFO'] === '' ? '/' : $_SERVER['PATH_INFO'];
-        // $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $currentUrl = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === '' ? '/' : parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
@@ -36,7 +34,7 @@ class Router
 
 
         if ( $fn ) {
-            // Call user fn va a llamar una función cuando no sabemos cual sera
+            // Call user fn va a llamar una función cuando no se cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
             header('Location: /404');
@@ -56,6 +54,19 @@ class Router
         //  incluiyo la vista en el layout
         include_once __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean(); // Limpia el Buffer
-        include_once __DIR__ . '/views/layout.php';
+
+
+        // Utilizar el layout acorde a la URL
+        $url_actual = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === '' ? '/' : parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+
+        if(str_contains($url_actual, '/tasktrack')){
+            include_once __DIR__ . '/views/tasktrack-layout.php';
+            
+        } else {
+            include_once __DIR__ . '/views/layout.php';
+        }   
+
     }
 }
+

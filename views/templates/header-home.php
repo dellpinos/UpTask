@@ -1,4 +1,4 @@
-<body>
+
     <header>
         <div class="home__barra">
             <div class="home__barra-contenedor">

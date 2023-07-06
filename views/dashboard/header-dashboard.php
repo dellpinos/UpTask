@@ -1,6 +1,14 @@
-<div class="dashboard">
-    <?php include_once __DIR__ . '/../templates/sidebar.php';?>
-    <div class="principal">
-        <?php include_once __DIR__ . '/../templates/barra.php'; ?>
-        <div class="contenido">
-            <h2 class="nombre-pagina" id="nombre-pagina"><?php echo $titulo; ?></h2>
+<div class="dashboard__header">
+    <a href="/tasktrack/dashboard">
+        <h2>TaskTrack</h2>
+    </a>
+    <p>Usuario: <a href="/tasktrack/perfil"><span><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido']; ?></span></a></p>
+
+    <a href="/logout" class="dashboard__cerrar-sesion">Cerrar Sesión</a>
+
+
+    <div class="dashboard__mobile-menu">
+        <img src="/build/img/burger.svg" alt="icono menu">
+    </div>
+
+</div>

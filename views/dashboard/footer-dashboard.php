@@ -1,7 +1,16 @@
-        </div>
     </div>
-</div>
+        </div>
 
-<?php $script = '
-<script src="build/js/app_1.1.js"></script>
-';
+
+        <?php if (empty($script)) {
+            $script = '
+    <script src="/build/js/app_1.2.js" defer></script>
+    <script src="/build/js/dashboard_1.2.js" defer></script>
+    ';
+        } else {
+            $script .= '
+    <script src="/build/js/app_1.2.js" defer></script>
+    <script src="/build/js/dashboard_1.2.js" defer></script>
+    ';
+        }
+    ?>

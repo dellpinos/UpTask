@@ -45,14 +45,14 @@ $router->get('/404', [LoginController::class, 'noValida']);
 /* Zona Privada */
 
 // Zona de proyectos
-$router->get('/dashboard', [DashboardController::class, 'index']);
-$router->get('/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
-$router->post('/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
-$router->get('/proyecto', [DashboardController::class, 'proyecto']);
-$router->get('/perfil', [DashboardController::class, 'perfil']);
-$router->post('/perfil', [DashboardController::class, 'perfil']);
-$router->get('/cambiar-password', [DashboardController::class, 'cambiar_password']);
-$router->post('/cambiar-password', [DashboardController::class, 'cambiar_password']);
+$router->get('/tasktrack/dashboard', [DashboardController::class, 'index']);
+$router->get('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
+$router->post('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
+$router->get('/tasktrack/proyecto', [DashboardController::class, 'proyecto']);
+$router->get('/tasktrack/perfil', [DashboardController::class, 'perfil']);
+$router->post('/tasktrack/perfil', [DashboardController::class, 'perfil']);
+$router->get('/tasktrack/cambiar-password', [DashboardController::class, 'cambiar_password']);
+$router->post('/tasktrack/cambiar-password', [DashboardController::class, 'cambiar_password']);
 
 // API para las tareas
 $router->get('/api/tareas', [TareaController::class, 'index']);

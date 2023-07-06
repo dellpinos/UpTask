@@ -26,17 +26,6 @@ class ProyectoController
 
         $tareas = Tarea::SQL($query);
 
-        // No cumple active record, los datos no pueden tomar la forma de los modelos
-
-
-        // TODO: Trae todas las tareas unificadas con los proyectos que coincidan con el id del usuario
-
-
-        // $tareas = [];
-
-        // foreach($proyectos as $proyecto){
-        //     $tareas[] = Tarea::belongsTo('proyectoId', $proyecto->id);
-        // }
 
         requiereCors();
         echo json_encode([
