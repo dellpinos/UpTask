@@ -6,6 +6,8 @@ use MVC\Router;
 use Model\Usuario;
 use Model\Proyecto;
 
+use Orhanerday\OpenAi\OpenAi;
+
 class DashboardController
 {
 
@@ -13,7 +15,7 @@ class DashboardController
     {
 
         session_start();
-        
+
         isAuth();
 
         $id = $_SESSION['id'];
@@ -64,14 +66,19 @@ class DashboardController
         session_start();
         isAuth();
 
-        $token = $_GET['id']; 
-        if (!$token) header('Location: /tasktrack/dashboard');
-        // Verificar al creador del proyecto
+        $token = $_GET['id'];
+        if (!$token) {
+            header('Location: /tasktrack/dashboard');
+            return;
+        }
 
+        // Verificar al creador del proyecto
         $proyecto = Proyecto::where('url', $token);
         if ($proyecto->propietarioId != $_SESSION['id']) {
             header('Location: /tasktrack/dashboard');
+            return;
         }
+
 
 
         $router->render('dashboard/proyecto', [
@@ -159,10 +166,23 @@ class DashboardController
                 }
             }
         }
-        
+
         $router->render('dashboard/cambiar-password', [
             'alertas' => $alertas,
             'titulo' => 'Cambiar password'
+        ]);
+    }
+
+    public static function prueba(Router $router)
+    {
+        session_start();
+
+        $alertas = [];
+
+
+        $router->render('dashboard/prueba', [
+            'alertas' => $alertas,
+            'titulo' => 'Prueba'
         ]);
     }
 }

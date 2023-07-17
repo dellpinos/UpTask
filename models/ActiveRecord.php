@@ -156,7 +156,6 @@ class ActiveRecord {
                 $objeto->$key = $value;
             }
         }
-
         return $objeto;
     }
 

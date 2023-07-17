@@ -14,6 +14,11 @@
         <a class="dashboard__enlace <?php echo ($titulo === 'Tu Perfil') ? 'activo' : ''; ?>" href="/tasktrack/perfil">
         <i class="fa-solid fa-user dashboard__icono"></i>
         Perfil</a>
+        <a class="dashboard__enlace <?php echo ($titulo === 'Prueba') ? 'activo' : ''; ?>" href="/tasktrack/prueba">
+        <i class="fa-solid fa-code dashboard__icono"></i>
+        Pruebas</a>
+
+
 
 
 

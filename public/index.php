@@ -8,6 +8,7 @@ use Controllers\LoginController;
 use Controllers\TareaController;
 use Controllers\ProyectoController;
 use Controllers\DashboardController;
+use Controllers\APIAssistantController;
 
 $router = new Router();
 
@@ -48,7 +49,14 @@ $router->get('/404', [LoginController::class, 'noValida']);
 $router->get('/tasktrack/dashboard', [DashboardController::class, 'index']);
 $router->get('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
 $router->post('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
+
 $router->get('/tasktrack/proyecto', [DashboardController::class, 'proyecto']);
+
+// Prueba de AI
+$router->get('/tasktrack/prueba', [DashboardController::class, 'prueba']);
+$router->post('/tasktrack/prueba', [APIAssistantController::class, 'prueba']);
+
+
 $router->get('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->post('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->get('/tasktrack/cambiar-password', [DashboardController::class, 'cambiar_password']);
