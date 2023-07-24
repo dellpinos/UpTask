@@ -20,7 +20,13 @@ class APIAssistantController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $post = $_POST['prompt'];
+
+            $proyecto = $_POST['prompt'];
+
+            // Deberia consultar la base de datos para obtener las tareas actuales del proyecto y añadirlas al prompt
+
+            $prompt = 'Divide el proyecto: ' . $proyecto . ' en 5 tareas mas sencillas, estas tareas no pueden tener mas de 5 palabras. Dame una respuesta en texto plano y separa cada tarea con un guion "-"';
+
 
             $open_ai_key = $_ENV['OPENAI_API_KEY'];
 
@@ -28,7 +34,7 @@ class APIAssistantController
 
             $complete = $open_ai->completion([
                 'model' => 'text-davinci-003',
-                'prompt' => $post,
+                'prompt' => $prompt,
                 'temperature' => 0.9,
                 'max_tokens' => 150,
                 'frequency_penalty' => 0,
@@ -37,59 +43,13 @@ class APIAssistantController
 
             $respuesta = json_decode($complete);
 
-
-            echo json_encode($respuesta->choices[0]->text);
+            // accedo al string que corresponde a la respuesta
+            echo json_encode($respuesta->choices[0]->text); 
 
             return;
         }
     }
 
 
-    // Copiado de tareas, hay que probar esto y cambiar nombres
-    // public static function crear() {
 
-    //     return; // <<<<<<<
-
-
-
-    //     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    //         session_start();
-    //         $proyecto = Proyecto::where('url', $_POST['proyectoId']);
-
-    //         if(!$proyecto || $proyecto->propietarioId != $_SESSION['id']) {
-    //             $respuesta = [
-    //                 'tipo' => 'error',
-    //                 'mensaje' => 'Hubo un error al agregar la tarea'
-    //             ];
-    //             requiereCors();
-    //             echo json_encode($respuesta);
-    //             return;
-    //         }
-
-    //         // Pasa las validaciones, crear la tarea
-    //         $tarea = new Tarea($_POST);
-    //         $tarea->proyectoId = $proyecto->id;
-
-    //         $resultado = $tarea->guardar();
-
-    //         if($resultado) {
-    //             $respuesta = [
-    //                 'tipo' => 'exito',
-    //                 'mensaje' => 'Almacenada correctamente',
-    //                 'id' => $resultado['id'],
-    //                 'proyectoId' => $proyecto->id
-    //             ];
-    //             requiereCors();
-    //             echo json_encode($respuesta);
-    //         } else {
-    //             $respuesta = [
-    //                 'tipo' => 'error',
-    //                 'mensaje' => 'Hubo un error al agregar la tarea'
-    //             ];
-    //             echo json_encode($respuesta);
-    //         }
-
-    //     }
-    // }
 }

@@ -23,5 +23,14 @@
 
         <input type="submit" value="Guardar cambios">
     </form>
+
+    <div class="perfil__contadores">
+        <p>Total de proyectos: <?php echo $contadores['total_proyectos']; ?></p>
+        <p>Total de proyectos completados: <?php echo $contadores['total_proyectos_completados']; ?></p>
+        <p>Total de tareas: <?php echo $contadores['total_tareas']; ?></p>
+        <p>Total de tareas completadas: <?php echo $contadores['total_tareas_completadas']; ?></p>
+
+
+    </div>
 </div>
 

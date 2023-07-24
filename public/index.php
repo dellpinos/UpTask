@@ -50,13 +50,18 @@ $router->get('/tasktrack/dashboard', [DashboardController::class, 'index']);
 $router->get('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
 $router->post('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
 
+$router->get('/tasktrack/actualizar-proyecto', [ProyectoController::class, 'actualizar_proyecto']);
+$router->post('/tasktrack/actualizar-proyecto', [ProyectoController::class, 'actualizar_proyecto']);
+
+$router->post('/tasktrack/eliminar-proyecto', [ProyectoController::class, 'eliminar']);
+
 $router->get('/tasktrack/proyecto', [DashboardController::class, 'proyecto']);
 
 // Prueba de AI
 $router->get('/tasktrack/prueba', [DashboardController::class, 'prueba']);
 $router->post('/tasktrack/prueba', [APIAssistantController::class, 'prueba']);
 
-
+// Perfil
 $router->get('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->post('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->get('/tasktrack/cambiar-password', [DashboardController::class, 'cambiar_password']);
@@ -68,9 +73,12 @@ $router->post('/api/tarea', [TareaController::class, 'crear']);
 $router->post('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
 $router->post('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
 
+
 // API para proyectos
 $router->get('/api/proyectos', [ProyectoController::class, 'index']);
-$router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']);
+
+
+$router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']); // <<<< ?
 
 
 

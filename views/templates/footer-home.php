@@ -5,7 +5,6 @@
             <a href="/login">Login</a>
             <a href="/crear">Sign Up</a>
             <a href="/info-app">App</a>
-            <a href="/contact">Contacto</a>
         </nav>
     </div>
     <p class="copyright">Todos los derechos Reservados <?php $fecha = date('Y');
