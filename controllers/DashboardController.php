@@ -92,36 +92,9 @@ class DashboardController
 
         session_start();
         isAuth();
-
-
-        $usuario = Usuario::find($_SESSION['id']);
-
         $alertas = [];
 
-
-        $proyectos = Proyecto::belongsTo('propietarioId', $usuario->id);
-        $contadores = [
-            'total_proyectos' => 0,
-            'total_proyectos_completados' => 0,
-            'total_tareas' => 0,
-            'total_tareas_completadas' => 0
-        ];
-
-        foreach ($proyectos as $proyecto) {
-            $contadores['total_proyectos']++;
-
-            if($proyecto->completado === "1") {
-                $contadores['total_proyectos_completados']++;
-            }
-            $tareas = Tarea::belongsTo('proyectoId', $proyecto->id);
-
-            foreach ($tareas as $tarea) {
-                $contadores['total_tareas']++;
-                if($tarea->estado === "1") {
-                    $contadores['total_tareas_completadas']++;
-                }
-            }
-        }
+        $usuario = Usuario::find($_SESSION['id']);
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -132,7 +105,6 @@ class DashboardController
             if (empty($alertas)) {
 
                 $existeUsuario = Usuario::where('email', $usuario->email);
-
 
                 if ($existeUsuario && $existeUsuario->id !== $usuario->id) {
                     // Mostrar mensaje de error, este email ya esta registrado
@@ -152,8 +124,7 @@ class DashboardController
         $router->render('dashboard/perfil', [
             'titulo' => 'Tu Perfil',
             'usuario' => $usuario,
-            'alertas' => $alertas,
-            'contadores' => $contadores
+            'alertas' => $alertas
         ]);
     }
     public static function cambiar_password(Router $router)

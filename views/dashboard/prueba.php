@@ -2,17 +2,25 @@
 
 
 <div class="contendor">
-    <div>
-    <label for="input-test">Input: </label>
+
+
+
+
+
+
+    <div class="prueba__contenedor">
+        <label for="input-test">Titulo del proyecto: </label>
         <input id="input-test" type="text" placeholder="Ingresa texto">
-        <button id="btn-prueba">Enviar</button>
+        <button class="prueba__btn" id="btn-prueba">Generar tareas</button>
     </div>
-        
+
 
 
     <div class="contenedor-sm">
-        <h4>Output</h4>
-        <p id="output-test"></p>
+        <h4>Tareas: </h4>
+        <ul class="prueba__contenedor-tareas" id="output-test">
+
+        </ul>
     </div>
 
 </div>

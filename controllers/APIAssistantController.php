@@ -25,7 +25,7 @@ class APIAssistantController
 
             // Deberia consultar la base de datos para obtener las tareas actuales del proyecto y añadirlas al prompt
 
-            $prompt = 'Divide el proyecto: ' . $proyecto . ' en 5 tareas mas sencillas, estas tareas no pueden tener mas de 5 palabras. Dame una respuesta en texto plano y separa cada tarea con un guion "-"';
+            $prompt = 'Divide el proyecto: ' . $proyecto . ' en 5 tareas (no enumeradas) mas sencillas, estas tareas no pueden tener mas de 5 palabras. Dame una respuesta en texto plano y separa cada tarea con un guion "-". ';
 
 
             $open_ai_key = $_ENV['OPENAI_API_KEY'];
@@ -44,6 +44,7 @@ class APIAssistantController
             $respuesta = json_decode($complete);
 
             // accedo al string que corresponde a la respuesta
+            
             echo json_encode($respuesta->choices[0]->text); 
 
             return;

@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\APIPerfil;
 use Controllers\HomeController;
 use Controllers\LoginController;
 use Controllers\TareaController;
@@ -73,10 +74,12 @@ $router->post('/api/tarea', [TareaController::class, 'crear']);
 $router->post('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
 $router->post('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
 
+// API Perfil
+$router->get('/api/perfil', [APIPerfil::class, 'getContadores']);
+
 
 // API para proyectos
 $router->get('/api/proyectos', [ProyectoController::class, 'index']);
-
 
 $router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']); // <<<< ?
 
