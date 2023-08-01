@@ -60,7 +60,8 @@ $router->get('/tasktrack/proyecto', [DashboardController::class, 'proyecto']);
 
 // Prueba de AI
 $router->get('/tasktrack/prueba', [DashboardController::class, 'prueba']);
-$router->post('/tasktrack/prueba', [APIAssistantController::class, 'prueba']);
+
+$router->post('/tasktrack/tareasIA', [APIAssistantController::class, 'tareasIA']);
 
 // Perfil
 $router->get('/tasktrack/perfil', [DashboardController::class, 'perfil']);

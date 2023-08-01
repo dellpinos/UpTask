@@ -11,7 +11,7 @@ use Orhanerday\OpenAi\OpenAi;
 class APIAssistantController
 {
 
-    public static function prueba(Router $router)
+    public static function tareasIA(Router $router)
     {
         session_start();
 
@@ -23,9 +23,18 @@ class APIAssistantController
 
             $proyecto = $_POST['prompt'];
 
-            // Deberia consultar la base de datos para obtener las tareas actuales del proyecto y añadirlas al prompt
+            if(isset($_POST['tareas'])){
+                $tareas = $_POST['tareas'];
+            }
 
-            $prompt = 'Divide el proyecto: ' . $proyecto . ' en 5 tareas (no enumeradas) mas sencillas, estas tareas no pueden tener mas de 5 palabras. Dame una respuesta en texto plano y separa cada tarea con un guion "-". ';
+
+            $prompt = 'Divide el proyecto: ' . $proyecto . ' en 5 instrucciones (no enumeradas) mas sencillas, intenta ser elocuente utilizando mas de 2 palabras y menos de 5 palabras por instruccion.';
+            
+            if(isset($tareas)){
+                $prompt .= 'Debes tener en cuenta las instrucciones ya existentes: ' . $tareas;
+            }
+
+            $prompt .= 'Dame una respuesta en texto plano (sin puntos) y separa cada instruccion con un guion "-". ';
 
 
             $open_ai_key = $_ENV['OPENAI_API_KEY'];
@@ -41,10 +50,13 @@ class APIAssistantController
                 'presence_penalty' => 0.6,
             ]);
 
+
             $respuesta = json_decode($complete);
 
-            // accedo al string que corresponde a la respuesta
             
+
+            // accedo al string que corresponde a la respuesta
+
             echo json_encode($respuesta->choices[0]->text); 
 
             return;
