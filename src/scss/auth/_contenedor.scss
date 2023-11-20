@@ -1,0 +1,79 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.auth {
+
+    &__contenedor {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+        margin: 8rem auto;
+        width: auto;
+        justify-content: space-between;
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 5rem;
+        }
+    }
+
+    &__imagen--login {
+        margin: 0;
+        min-height: 30rem;
+        background-image: image-set(url(../img/puzzle.avif) 1x, url(../img/puzzle.webp) 1x, url(../img/puzzle.jpg) 1x);
+        background-repeat: no-repeat;
+        background-size: 300px;
+        background-position: bottom center;
+
+        h2 {
+            @include m.texto-fluido(2rem, 8rem);
+            margin: 0;
+            color: v.$grisAzul;
+            text-align: center;
+        }
+
+        @include m.tablet {
+            background-size: 700px;
+            min-height: 60rem;
+            background-position: bottom left;
+            text-align: left;
+            margin: 2rem 0 2rem 0;
+        }
+    }
+
+    &__formulario {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        .TaskTrack {
+            @include m.textoDegradado(v.$grisAzul);
+            font-size: 4rem;
+            display: none;
+
+            @include m.tablet {
+                font-size: 7rem;
+                display: block;
+            }
+
+        }
+
+        .tagline {
+            font-family: v.$fuente_headings;
+            font-weight: 900;
+            color: v.$negro;
+            font-size: 2rem;
+            text-align: center;
+
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+    }
+
+
+}

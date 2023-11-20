@@ -1,0 +1,172 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contenedor-nueva-tarea {
+
+    display: flex;
+    justify-content: center;
+
+    .agregar-tarea {
+        margin-top: 3rem;
+        @include m.boton(v.$grisAzul, v.$blanco);
+        border-radius: 1rem;
+    }
+}
+
+.listado-tareas {
+    list-style: none;
+    padding: 0;
+    width: auto;
+
+    @include m.tablet {
+        padding-top: 4rem;
+        width: 90%;
+    }
+
+    .no-tareas {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+
+.tarea {
+
+    padding: .5rem 2rem;
+    border-bottom: 1.5px solid darken(v.$grisClaro, 5%);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    p {
+        font-size: 1.4rem;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 13rem;
+
+        &:hover{
+            color: v.$naranjaOscuro;
+        }
+    }
+    .opciones {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            font-size: .9rem;
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+            border-radius: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .completa {
+            background-color: v.$azul;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$azul, 10%);
+            }
+        }
+        .pendiente {
+            background-color: v.$naranja;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$naranja, 10%);
+            }
+        }
+        .eliminar-tarea {
+            background-color: v.$rojo;
+            color: v.$blanco;
+            &:hover {
+                background-color: darken(v.$rojo, 10%);
+            }
+        }
+    }
+}
+.tareas {
+    &__contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        // Aqui
+
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+    }
+    &__contenedor-sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+   
+
+        @include m.tablet {
+
+
+        }
+    }
+
+    &__generadas {
+
+        width: 100%;
+        padding: 5rem 1rem;
+        border: 1px solid v.$grisAzul;
+        border-radius: 1rem;
+        text-align: center;
+
+        @include m.tablet {
+            margin-top: 4rem;
+            width: 20%;
+        }
+
+    }
+    &__sugeridas {
+        h4 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+    &__generar {
+        margin-top: 3rem;
+        @include m.boton(v.$grisAzul, v.$blanco);
+        padding: 1rem 2.2rem;
+        border-radius: 1rem;
+    }
+    &__ia-generadas {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    &__ia-generada {
+        @include m.reset-lista;
+        background-color: lighten(v.$grisAzul, 15%);
+        border-radius: 1rem;
+        font-size: 1.3rem;
+        color: v.$blanco;
+        font-weight: v.$regular;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(v.$grisAzul, 5%);
+        }
+    }
+}

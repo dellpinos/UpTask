@@ -1,0 +1,52 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.scroll-mobile {
+    overflow: hidden;
+}
+.dashboard {
+
+    &__grid {
+        &--mobile {
+            flex-direction: column;
+            flex: auto;
+            overflow-y: initial;
+
+        }
+    }
+
+    &__sidebar-nav {
+        &--mobile { // Esta clase se añade con Js
+
+            margin-top: 3rem;
+
+        }
+
+    }
+
+    &__sidebar { //derecha
+        &--mobile { // Esta clase se añade con Js
+            opacity: 1;
+            height: 100vh;
+            width: auto;
+            overflow: visible;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__mobile-menu { // <<< Icono
+        @include m.tablet {
+            display: none;
+        }
+        img {
+            width: 5rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

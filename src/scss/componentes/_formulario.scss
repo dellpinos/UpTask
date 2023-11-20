@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.auth__formulario-boton {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+.formulario {
+
+
+    .campo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-direction: row;
+
+        @include m.tablet {
+
+        }
+
+        &:last-of-type {
+            margin-bottom: 4rem;
+        }
+
+        label {
+            flex: 0 0 4rem;
+            margin: 0 3rem 0 1rem;
+            white-space: nowrap;
+            
+            @include m.tablet {
+                flex: 0 0 7rem;
+            }
+
+        }
+        input {
+            border-radius: 1rem;
+            flex: 1;
+            padding: 1.3rem;
+            border: none;
+            background-color: lighten(v.$gris, 40%);
+            
+        }
+    }
+    
+}

@@ -1,0 +1,42 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.olvide {
+    margin-top: 5rem;
+
+    .TaskTrack {
+        @include m.textoDegradado(v.$grisAzul);
+        font-size: 4rem;
+        display: none;
+
+        @include m.tablet {
+            font-size: 7rem;
+            display: block;
+        }
+
+    }
+
+    input[type="submit"] {
+        @include m.boton(v.$naranjaOscuro, v.$blanco);
+        margin-top: 4rem;
+        border-radius: 1.5rem;
+    }
+
+    .acciones {
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a {
+            color: v.$grisAzul;
+            margin: 2rem;
+
+            &:hover {
+                color: v.$naranjaOscuro;
+            }
+
+        }
+    }
+}

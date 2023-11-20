@@ -1,0 +1,37 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.mensaje {
+
+    margin-top: 5rem;
+
+    .TaskTrack {
+        @include m.textoDegradado(v.$grisAzul);
+        font-size: 4rem;
+
+
+        @include m.tablet {
+            font-size: 7rem;
+            display: block;
+        }
+
+    }
+
+    .descripcion-pagina {
+        color: v.$naranjaOscuro;
+    }
+
+    .acciones {
+        
+        justify-content: center;
+        a {
+            color: v.$grisAzul;
+            margin-top: 7rem;
+
+            &:hover {
+                color: v.$naranjaOscuro;
+            }
+        }
+    }
+}

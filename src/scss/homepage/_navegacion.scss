@@ -1,0 +1,121 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.home {
+
+    &__barra {
+        height: 100%;
+        width: 100%;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 3rem 1rem 3rem;
+        background-image: linear-gradient(to bottom, rgba(v.$grisAzul, 1), rgba(v.$naranjaOscuro, 0.3));
+        background-color: v.$grisAzul;
+        box-shadow: inset 0px 3px 8px rgba(v.$naranjaOscuro, .5);
+        box-shadow: inset 0px -3px 8px rgba(v.$naranjaOscuro, .5);
+
+        @include m.tablet {
+            display: flex;
+
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            color: v.$blanco;
+            font-size: 4rem;
+
+
+            @include m.tablet {
+                font-size: 6rem;
+            }
+        }
+
+    }
+
+    &__derecha {
+
+        height: 0;
+        opacity: 0;
+        transition: height .5s ease, opacity .5s ease;
+
+        @include m.tablet {
+            height: auto;
+            opacity: 1;
+            align-items: flex-end;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__navegacion {
+
+        // Mostrar menu
+        @include m.tablet {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        a {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: v.$blanco;
+            text-decoration: none;
+            font-size: 2rem;
+            text-align: center;
+            padding: 1rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            &:hover {
+                color: v.$naranjaOscuro;
+            }
+
+            @include m.tablet {
+                margin: 0 2rem 0 0;
+
+                font-size: 1.8rem;
+                display: block; // ocupe todo el espacio disponible
+                text-align: center; // centra el contenido
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &--footer {
+            display: none;
+
+            @include m.tablet {
+                display: flex;
+            }
+        }
+
+    }
+
+
+    &__mobile-menu {
+
+        @include m.tablet {
+            display: none; // para que el vector no sea visible en pantallas grandes
+        }
+
+        img {
+            width: 5rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}

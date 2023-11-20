@@ -1,0 +1,67 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.auth {
+
+    &__contenedor--crear{
+        max-width: 95%;
+    
+        input[type="submit"] {
+            @include m.boton(v.$naranjaOscuro, v.$blanco);
+            margin-top: 4rem;
+            border-radius: 1.5rem;
+        }
+        
+        .contenedor-sm {
+            width: 100%;
+            align-items: start;
+
+            @include m.tablet {
+                padding-top: 5rem;
+            }
+        }
+        .acciones {
+            display: flex;
+            justify-content: space-between;
+            a {
+                color: v.$naranjaOscuro;
+                margin: 2rem;
+
+                &:hover {
+                    color: v.$grisAzul;
+                }
+            }
+        }
+        @include m.tablet {
+            display: block;
+        }
+    }
+
+    &__imagen--crear {
+        margin: 0 auto;
+        min-height: 30rem;
+        background-image: url(../img/listatildesNaranjas.svg);
+        background-repeat: no-repeat;
+        background-size: 0;
+        background-position: top right;
+
+
+        @include m.tablet {
+            background-size: 0px;
+            min-height: 60rem;
+            text-align: left;
+            margin: 2rem auto;
+            overflow: visible;
+            
+        }
+    }
+    &__descripcion {
+        color: v.$grisAzul;
+        margin: 5rem 0 5rem 0;
+    }
+
+    
+}
+
+
+

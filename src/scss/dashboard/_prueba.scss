@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+.prueba{
+
+    &__contenedor {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+    }
+
+    &__contenedor-tareas {
+        @include m.reset-lista;
+        display: table;
+    }
+
+    &__tarea {
+        padding: 1rem;
+        background-color: v.$grisAzul;
+        color: v.$blanco;
+        border-radius: 3rem;
+        margin: 3rem;
+        text-align: center;
+        
+    }
+
+    &__btn {
+        @include m.boton(v.$grisAzul, v.$blanco);
+        padding: .8rem;
+        border-radius: 1rem;
+    }
+}

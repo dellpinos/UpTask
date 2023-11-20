@@ -1,0 +1,83 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+.home {
+
+
+    &__contenedor-cards {
+        margin: 5rem 0 7rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+
+        @include m.tablet {
+            margin: 12rem 0 15rem 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 2rem;
+        padding: 1rem;
+        margin: 0 2rem 3rem 2rem;
+        background-color: lighten(v.$grisAzul, 65%);
+        color: v.$naranjaOscuro;
+        box-shadow: 5px 5px 8px rgba(v.$naranjaOscuro, .8),
+            0px 5px 8px rgba(v.$naranjaOscuro, .5);
+            
+        transition: 300ms all;
+        
+
+        &:hover {
+            box-shadow: 3px 3px 5px rgba(v.$naranjaOscuro, .8),
+                0px 5px 8px rgba(v.$naranjaOscuro, .5),
+                0px 5px 15px 15px rgba(v.$naranjaOscuro, .6);
+
+            @include m.tablet {
+                .home__card-imagen {
+                    min-height: 15rem;
+                    background-size: 15rem;
+                }
+            }
+            
+        }
+        @include m.tablet {
+            flex-direction: row;
+            margin: 0 0 3rem 0;
+        }
+
+    }
+
+    &__card-imagen {
+        background-image: url(../img/lampara.svg);
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: 4rem;
+        min-height: 15rem;
+        width: 30%;
+
+        @include m.tablet {
+            background-position: center center;
+            background-size: 13rem;
+            min-height: 15rem;
+            width: 60%;
+        }
+    }
+
+    &__card-texto {
+        h4 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}

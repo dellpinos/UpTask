@@ -1,0 +1,55 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.home {
+
+    &__imagen-info {
+        min-height: 35rem;
+        background-image: linear-gradient(to bottom, rgba(v.$negro, .9), rgba(v.$grisAzul, 0)),
+        image-set(url(../img/planoClose.avif) 1x, url(../img/planoClose.webp) 1x, url(../img/planoClose.jpg) 1x);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 5rem 0 4rem 0;
+        @include m.tablet {
+            background-position: center;
+            min-height: 50rem;
+            margin: 10rem 0 15rem 0;
+        }
+    }
+
+    &__imagen-texto {
+        height: 100%;
+        color: v.$blanco;
+
+
+        p {
+            color: v.$naranjaOscuro;
+            font-size: 1.1rem;
+            line-height: 3rem;
+            margin: 0 3rem;
+
+            @include m.tablet {
+                font-size: 2rem;
+            }
+        }
+        
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+
+            @include m.tablet {
+                font-size: 4rem;
+            }
+            
+        }
+
+        
+        
+    }
+}  

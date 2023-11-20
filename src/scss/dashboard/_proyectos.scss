@@ -1,0 +1,93 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.no-proyectos {
+
+    text-align: center;
+    margin-top: 3rem;
+    list-style: none;
+
+    a {
+        color: v.$grisAzul;
+        font-weight: bold;
+    }
+}
+
+.listado-proyectos {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+
+    @include m.grid(1, 2rem);
+
+
+
+    .proyecto {
+        background-color: v.$grisAzul;
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        line-height: 2rem;
+        border-radius: .5rem;
+        justify-content: space-between;
+
+        .contenedor-numero-tareas { 
+            margin-top: 1.5rem;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        .proyecto-elementos {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+
+            .numero-tareas {
+                align-items: flex-end;
+                font-size: 1.5rem;
+            }
+        }
+
+    
+        &:hover {
+            background-color: darken(v.$grisAzul, 5%);
+        }
+
+        p {
+            font-size: 2.5rem;
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+    .proyecto-completo{
+
+        background-repeat: no-repeat;
+        background-size: 2rem;
+        background-position: top 8px right 8px;
+        background-color: v.$grisAzul;
+        
+
+
+        
+        &--nombre {
+
+        }
+
+        &--tareas {
+            color: v.$naranja!important;
+            font-weight: v.$delgada;
+        }
+
+    }
+    .proyecto-incompleto{
+
+        &--tareas {
+
+            font-weight: v.$bold;
+        }
+    }
+
+}
