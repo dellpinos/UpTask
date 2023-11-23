@@ -1,0 +1,76 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.home {
+    &__contenedor-proyectos {
+        margin-top: 6rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        align-items: center;
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 10rem;
+        }
+
+    }
+
+    &__texto-proyecto {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+
+
+        @include m.tablet {
+            margin-bottom: 10rem;
+        }
+
+        .home__heading {
+            margin: 0;
+        }
+        .home__parrafo-proyecto {
+            margin: 3rem 0 3rem 0;
+            font-size: 1.4rem;
+
+
+        @include m.tablet {
+            font-size: 2rem;
+        }
+        }
+
+    }
+
+    &__enlace-proyecto {
+        display: block;
+        margin: 0 3rem 3rem 0;
+        font-size: 1.3rem;
+        font-weight: 900;
+
+        a {
+            color: v.$naranjaOscuro;
+            &:hover {
+                color: v.$grisAzul;
+            }
+            @include m.tablet {
+                font-size: 2rem;
+            }
+        }
+    }
+
+
+    &__imagen-proyecto {
+        min-height: 30rem;
+        background-image: image-set(url(../img/pizarra.webp) 1x, url(../img/pizarra.jpg) 1x);
+        background-repeat: no-repeat;
+        background-size: 300px;
+        background-position: center;
+        @include m.tablet {
+            min-height: 60rem;
+            background-size: cover;
+        }
+    }
+}

@@ -118,6 +118,16 @@ class TareaController {
 
             $resultado = $tarea->eliminar();
 
+
+            // Revisa si se ha eliminado la ultima tarea
+            $total_tareas = Tarea::total('proyectoId', $proyecto->id);
+
+            if($total_tareas === '0') {
+                $proyecto->completado = 0;
+                $proyecto->sincronizar();
+                $proyecto->guardar();
+            }
+
             if($resultado) {
                 $resultado = [
                     'resultado' => $resultado,

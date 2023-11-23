@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.barra-mobile {
+    width: 100%;
+    background-color: v.$grisAzul;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.tablet {
+        display: none;
+    }
+
+    h1 {
+        color: v.$blanco;
+        margin: 0;
+    }
+
+    .menu {
+
+        img {
+            width: 5.5rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+

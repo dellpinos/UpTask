@@ -1,0 +1,102 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.home {
+
+    &__contenido-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__heading {
+        text-align: center;
+        margin: 1.5rem 0 3rem 0;
+        font-size: 3rem;
+        color: v.$grisAzul;
+
+        @include m.tablet {
+            font-size: 5.5rem;
+            margin: 3rem 0 5rem 0;
+        }
+    }
+
+    &__header {
+        background-color: v.$grisOscuro;
+        padding: 1rem 0 3rem 0;
+        background-image:
+            linear-gradient(to bottom, rgba(v.$naranjaOscuro, .2), rgba(v.$grisAzul, 0)),
+            url(../img/listaTildes.svg),
+            image-set(url(../img/notasMujer.avif) 1x, url(../img/notasMujer.webp) 1x, url(../img/notasMujer.jpg) 1x);
+        background-repeat: no-repeat;
+        background-size: cover, 0, cover;
+        background-position: top left, top right, center;
+        min-height: 40rem;
+        display: flex;
+        margin-bottom: 5rem;
+
+        @include m.tablet {
+            min-height: 65rem;
+            background-size: cover, 550px, cover;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-bottom: 10rem;
+        }
+    }
+
+    &__contenedor__boton {
+        @include m.tablet {
+            display: flex;
+        }
+    }
+
+    &__boton {
+        @include m.boton(v.$grisAzul, v.$naranjaOscuro);
+        border-radius: 2rem;
+        text-transform: uppercase;
+
+        transition: all;
+        transition-duration: 0.3s;
+        box-shadow: 5px 5px 8px rgba(v.$naranjaOscuro, .8),
+            0px 5px 8px rgba(v.$naranjaOscuro, .5);
+
+        &:hover {
+            box-shadow: 3px 3px 5px rgba(v.$naranjaOscuro, .8),
+                0px 5px 8px rgba(v.$naranjaOscuro, .5),
+                0px 5px 15px 15px rgba(v.$naranjaOscuro, .6);
+
+            transform: translateY(2px);
+        }
+
+        @include m.tablet {
+            display: inline;
+            padding: 2rem;
+            font-size: 2.2rem;
+            box-shadow: 5px 5px 8px rgba(v.$naranjaOscuro, .8),
+                0px 5px 8px rgba(v.$blanco, .5),
+                0px 5px 15px 15px rgba(v.$blanco, .6);
+            margin: 0 0 3rem 0;
+
+        }
+    }
+
+    &__icono-nav {
+        font-size: 3rem;
+        color: v.$blanco;
+        margin: 0 2rem 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+
+        @include m.tablet {
+            display: block; // ocupe todo el espacio disponible
+            text-align: center; // centra el contenido
+
+        }
+
+        &:hover {
+            color: v.$naranjaOscuro;
+        }
+    }
+}

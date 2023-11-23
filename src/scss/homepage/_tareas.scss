@@ -1,0 +1,75 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.home {
+    &__contenedor-tareas {
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+        @include m.tablet {
+            grid-template-columns: 3fr 5fr;
+        }
+
+
+    }
+
+    &__texto-tarea {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-size: 1.4rem;
+
+
+        @include m.tablet {
+            font-size: 2rem;
+            justify-content: center;
+        }
+
+
+    }
+    &__parrafo-tarea {
+        font-size: 1.4rem;
+
+
+        @include m.tablet {
+            font-size: 2rem;
+            justify-content: center;
+        }
+
+
+    }
+
+    &__enlace-tarea {
+        display: block;
+        text-align: end;
+        margin: 0 3rem 3rem 0;
+        font-size: 2rem;
+
+        font-weight: 900;
+
+        a {
+            color: v.$azul;
+
+            &:hover {
+                color: v.$naranja;
+
+            }
+        }
+    }
+
+    &__imagen-tarea {
+        min-height: 30rem;
+        background-image: image-set(url(../img/notasLado.avif) 1x,url(../img/notasLado.webp) 1x, url(../img/notasLado.jpg) 1x);
+        background-repeat: no-repeat;
+        background-size: 400px;
+        background-position: center;
+
+        @include m.tablet {
+            background-size: 400px;
+            background-position: left;
+        }
+    }
+}

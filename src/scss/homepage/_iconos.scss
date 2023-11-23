@@ -1,0 +1,112 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.home {
+
+    &__iconos-nosotros {
+        @include m.tablet {
+            @include m.grid(3, 2rem);
+        }
+
+        margin-bottom: 5rem;
+    }
+
+    &__icono {
+        text-align: center;
+        p {
+            font-size: 1.4rem;
+            @include m.tablet {
+                font-size: 2rem;
+            }
+        }
+        h3 {
+            text-transform: uppercase;
+            font-size: 2.2rem;
+    
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    &__icono-idea {
+        background-image: url(../img/lampara.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+    
+    &__icono-tarea {
+        background-image: url(../img/notes.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+    
+    &__icono-proyecto {
+        background-image: url(../img/checkbox.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+
+    &__icono-planifica {
+        background-image: url(../img/randomArrows.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+    
+    &__icono-organiza {
+        background-image: url(../img/centerArrows.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+    
+    &__icono-implementa {
+        background-image: url(../img/expanseArrows.svg);
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 20rem;
+    
+        @include m.tablet {
+            background-size: 25rem;
+            min-height: 30rem;
+        }
+    }
+}
+
+

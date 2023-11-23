@@ -1,0 +1,27 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.login{
+    margin-top: 0;
+    @include m.tablet {
+        margin-top: 5rem;
+    }
+    
+    
+
+    input[type="submit"] {
+        @include m.boton(v.$naranjaOscuro, v.$blanco);
+        border-radius: 1.5rem;
+    }
+    
+    .acciones {
+        a {
+            color: v.$naranjaOscuro;
+            margin: 2rem;
+
+            &:hover {
+                color: v.$grisAzul;
+            }
+        }
+    }
+}

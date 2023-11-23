@@ -3,11 +3,13 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\APIPerfil;
 use Controllers\HomeController;
 use Controllers\LoginController;
 use Controllers\TareaController;
 use Controllers\ProyectoController;
 use Controllers\DashboardController;
+use Controllers\APIAssistantController;
 
 $router = new Router();
 
@@ -48,7 +50,20 @@ $router->get('/404', [LoginController::class, 'noValida']);
 $router->get('/tasktrack/dashboard', [DashboardController::class, 'index']);
 $router->get('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
 $router->post('/tasktrack/crear-proyecto', [DashboardController::class, 'crear_proyecto']);
+
+$router->get('/tasktrack/actualizar-proyecto', [ProyectoController::class, 'actualizar_proyecto']);
+$router->post('/tasktrack/actualizar-proyecto', [ProyectoController::class, 'actualizar_proyecto']);
+
+$router->post('/tasktrack/eliminar-proyecto', [ProyectoController::class, 'eliminar']);
+
 $router->get('/tasktrack/proyecto', [DashboardController::class, 'proyecto']);
+
+// Prueba de AI
+// $router->get('/tasktrack/prueba', [DashboardController::class, 'prueba']);
+
+$router->post('/tasktrack/tareasIA', [APIAssistantController::class, 'tareasIA']);
+
+// Perfil
 $router->get('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->post('/tasktrack/perfil', [DashboardController::class, 'perfil']);
 $router->get('/tasktrack/cambiar-password', [DashboardController::class, 'cambiar_password']);
@@ -60,9 +75,14 @@ $router->post('/api/tarea', [TareaController::class, 'crear']);
 $router->post('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
 $router->post('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
 
+// API Perfil
+$router->get('/api/perfil', [APIPerfil::class, 'getContadores']);
+
+
 // API para proyectos
 $router->get('/api/proyectos', [ProyectoController::class, 'index']);
-$router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']);
+
+$router->post('/api/proyecto/actualizar', [ProyectoController::class, 'actualizar_proyecto']); // <<<< ?
 
 
 

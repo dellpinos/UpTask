@@ -1,0 +1,34 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.scroll-mobile {
+    overflow: hidden;
+}
+.home {
+    &__barra {
+        &--mobile { // Esta clase se añade con Js
+            display: block;
+
+        }
+        &-contenedor {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__derecha {
+        &--mobile { // Esta clase se añade con Js
+            opacity: 1;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a, i {
+                margin: 2rem 0 2rem 0;
+            }
+        }
+    }
+}

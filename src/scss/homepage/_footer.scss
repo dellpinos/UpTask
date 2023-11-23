@@ -1,0 +1,46 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.home {
+
+    
+
+    &__footer {
+        margin-top: calc(v.$separacion / 2);
+    
+        background-color: v.$blanco;
+        margin-bottom: 0;
+
+        .home__barra {
+            padding: 2rem;
+            background-image: linear-gradient(to top, rgba(v.$grisAzul, 1), rgba(v.$naranjaOscuro, 0.3));
+            box-shadow: inset 0px -3px 8px rgba(v.$naranjaOscuro, .5);
+            box-shadow: inset 0px 3px 8px rgba(v.$naranjaOscuro, .5);
+    
+            @include m.tablet {
+                padding: 2.5rem;
+            }
+            a {
+                white-space: nowrap; // Evita que se separen las palabras de un texto
+            }
+        }
+    
+        .copyright {
+            color: v.$negro;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    }
+    &__barra-texto {
+        color: v.$naranjaOscuro;
+        font-size: 1rem;
+        line-height: 1.2;
+
+
+        @include m.tablet {
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+    }
+
+}
