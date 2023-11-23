@@ -12,7 +12,10 @@
     async function obtenerProyectos() {
 
         try {
-            const url = "http://127.0.0.1:3000/api/proyectos";
+            
+            // const url = "http://127.0.0.1:3000/api/proyectos";
+
+            const url = `${location.origin}/api/proyectos`;
 
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();

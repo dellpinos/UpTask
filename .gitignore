@@ -14,5 +14,8 @@ package.json
 package-lock.json
 # Variables de entorno
 .env
+.env.local
+.env.production
+.env.staging
 
 

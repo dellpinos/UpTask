@@ -235,7 +235,8 @@
         datos.append('proyectoId', obtenerProyecto());
 
         try {
-            const url = 'http://127.0.0.1:3000/api/tarea';
+            // const url = 'http://127.0.0.1:3000/api/tarea';
+            const url = `${location.origin}/api/tarea`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
@@ -285,7 +286,9 @@
         datos.append('estado', estado);
         datos.append('proyectoId', obtenerProyecto());
         try {
-            const url = "http://127.0.0.1:3000/api/tarea/actualizar";
+            // const url = "http://127.0.0.1:3000/api/tarea/actualizar";
+
+            const url = `${location.origin}/api/tarea/actualizar`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
@@ -342,7 +345,10 @@
         datos.append('estado', estado);
         datos.append('proyectoId', obtenerProyecto());
         try {
-            const url = "http://127.0.0.1:3000/api/tarea/eliminar";
+            // const url = "http://127.0.0.1:3000/api/tarea/eliminar";
+
+            const url = `${location.origin}/api/tarea/eliminar`;
+
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
@@ -420,7 +426,9 @@
 
 
         try {
-            const url = 'http://127.0.0.1:3000/tasktrack/tareasIA';
+            // const url = 'http://127.0.0.1:3000/tasktrack/tareasIA';
+
+            const url = `${location.origin}/tasktrack/tareasIA`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos

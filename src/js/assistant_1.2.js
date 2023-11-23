@@ -20,7 +20,8 @@
         datos.append('prompt', inputTest.value);
 
         try {
-            const url = 'http://127.0.0.1:3000/tasktrack/prueba';
+            const url = `${location.origin}/tasktrack/prueba`;
+            // const url = 'http://127.0.0.1:3000/tasktrack/prueba';
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
@@ -111,7 +112,8 @@
         datos.append('proyectoId', obtenerProyecto());
 
         try {
-            const url = 'http://127.0.0.1:3000/api/tarea';
+            // const url = 'http://127.0.0.1:3000/api/tarea';
+            const url = `${location.origin}/api/tarea`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos
