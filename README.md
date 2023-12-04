@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://socialify.git.ci/dellpinos/UpTask/image?language=1&name=1&owner=1&theme=Light" alt="project-image"></p>
 
-<p id="description">Administra proyectos y tareas de manera eficiente con nuestra plataforma. Con TaskTrack, puedes crear proyectos y asignar tareas de forma rápida y sencilla. Organiza tus proyectos según tus necesidades y mantén un seguimiento claro de cada tarea. La creación inteligente de tareas utiliza ChatGPT para sugerirte nuevas tareas basandose en tu proyecto y su avace.</p>
+<p id="description">Administra proyectos y tareas de manera eficiente con nuestra plataforma. Con TaskTrack, puedes crear proyectos y asignar tareas de forma rápida y sencilla. Organiza tus proyectos según tus necesidades y mantén un seguimiento claro de cada tarea. La creación inteligente de tareas utiliza ChatGPT para sugerirte nuevas tareas basándose en tu proyecto y su avance.</p>
 
 <div class="bandages">
 <p align="center"><img src="https://img.shields.io/badge/MVC-red" alt="shields">  <img src="https://img.shields.io/badge/SweetAlert2-pink" alt="shields">  <img src="https://img.shields.io/badge/use-ChatGPT-green" alt="shields">  <img src="https://img.shields.io/badge/NGINX-black" alt="shields">  <img src="https://img.shields.io/badge/FontAwesome-green" alt="shields">  <img src="https://img.shields.io/badge/Rest_API-orange" alt="shields"></p>
